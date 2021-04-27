@@ -36,3 +36,12 @@ exports.languages = [
 // ex18.cars[0][1][0]
 // ex18.cars[0][1][2]
 // ex18.cars[2][1][0]
+
+// LANGUAGES:
+// ex18.languages[0][1][0]
+// ex18.languages[1][1][1][0]
+// ex18.languages[3][1][1][1]
+// ex18.languages[3][1][0]
+// ex18.languages[4][1][1][1]
+// ex18.languages[2][1][1][1]
+// ex18.languages[2][1][0]
