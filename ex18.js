@@ -16,3 +16,13 @@ exports.languages = [
     ['C', ['Fast', ['Annoying', 'Dangerous']]],
     ['Forth', ['Fast', ['Fun', 'Difficult']]],
 ];
+
+// Solutions
+// FRUIT:
+// ex18.fruit[0][1]
+// ex18.fruit[0][2]
+// ex18.fruit[1][1] + ex18.fruit[2][1]
+// ex18.fruit[1][0]
+// ex18.fruit[3][0]
+// ex18.fruit[3][1]
+// ex18.fruit[0][0]
