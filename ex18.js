@@ -26,3 +26,13 @@ exports.languages = [
 // ex18.fruit[3][0]
 // ex18.fruit[3][1]
 // ex18.fruit[0][0]
+
+// CARS:
+// ex18.cars[0][1][1]
+// ex18.cars[1][1][0]
+// ex18.cars[2][1][2]
+// ex18.cars[3][1][0]
+// ex18.cars[3][1][2]
+// ex18.cars[0][1][0]
+// ex18.cars[0][1][2]
+// ex18.cars[2][1][0]
