@@ -45,3 +45,13 @@ exports.languages = [
 // ex18.languages[4][1][1][1]
 // ex18.languages[2][1][1][1]
 // ex18.languages[2][1][0]
+
+// CODE:
+// Little
+// Red
+// Corvette
+// Baby
+// UR
+// Mush
+// 2
+// Fast
