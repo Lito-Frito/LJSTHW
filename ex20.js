@@ -1,4 +1,4 @@
-const readline = require('readline-sync');
+const readline = require('readline-sync'); // Done
 
 const say = (prompt) => { // echos a prompt
     console.log(prompt);
@@ -24,22 +24,48 @@ const door = (hp) => {
 }
 
 const spider = (hp) => {
-    // they enter here, and the spider takes 10 hit points
+    // they enter here, and the spider takes 5 hit points
     // if they live then they can run away
+    say("You see a ... giant spider!");
+    say("It looks really hungry.");
+    say("It immediately lashes out at you with a leg and knocks you away.")
+    hp = hp - 5;
+
+    console.log(`[[You have ${hp} hit points.]]`);
+
+    if(hp <= 0) {
+        die("You died!");
+
+    say("You manage to run away back to that door you found earlier.");
+    door(hp);
+  }
 }
 
 const gold = (hp) => {
     // end of the game they win if they get the gold
+    say("You made it!");
+    say("You successfully found all the gold!");
+    ask(hp, "Congrats!");
 }
 
 const rope = (hp) => {
-  say("You see a door at the bottom of the well.");
-  say("There's also a window you can go through.");
-    let ropeChoice = ask(hp,"What do you do?");
+    say("You see a door at the bottom of the well.");
+    say("There's also a tunnel you can go through.");
+    let ropeChoice = ask(hp,"What do you do, door or tunnel?");
+
+    if (ropeChoice === "door") {
+        door(hp);
+      } else if (ropeChoice === "tunnel") {
+            spider(hp);
+      } else {
+            say("You can't do that here.");
+            rope(hp);
+      }
     // they are at the bottom of the well
     // they can go through the door to the gold
     // or go take a wrong turn to the spider
 }
+
 const greeting = () => { // Greets player and gets name
   say(`Welcome to "${process.argv[1]}" world!`)
   let name = readline.question("What's your name? ");
@@ -59,9 +85,9 @@ const greeting = () => { // Greets player and gets name
 }
 
 const well = (hp) => {
-  say("You are walking through the woods and see a well.");
-  say("Walking up to it and looking down you see a shiny thing at the bottom.");
-  let next = ask(hp, "What do you do?");
+    say("You are walking through the woods and see a well.");
+    say("Walking up to it and looking down you see a shiny thing at the bottom.");
+    let next = ask(hp, "What do you do, jump or climb?");
 
     if(next === "climb") {
         say("You climb down the rope.");
