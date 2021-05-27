@@ -21,6 +21,17 @@ const ask = (hp, prompt) => { // shows your HP and asks you what to do (prompt)
 const door = (hp) => {
     // they have to open the door to get the gold
     // what kind of puzzle will they solve?
+    let num1 = Math.floor(Math.random() * 10) + 1;
+    let num2 = Math.floor(Math.random() * 10) + 1;
+    // console.log(num1+num2);
+    let answer = parseInt(readline.question(`What is ${num1} + ${num2}? `));
+
+    if (answer === num1+num2) {
+        say("A door magically appears and you instinctively step through it.");
+        gold(hp);
+    } else {
+        die("Your incorrect answer triggered a trap and the room collapsed on you.");
+    }
 }
 
 const spider = (hp) => {
@@ -45,7 +56,7 @@ const gold = (hp) => {
     // end of the game they win if they get the gold
     say("You made it!");
     say("You successfully found all the gold!");
-    ask(hp, "Congrats!");
+    ask(hp, "Congrats! [Press ENTER to exit game]");
 }
 
 const rope = (hp) => {
@@ -106,4 +117,4 @@ const well = (hp) => {
 let hp = Math.floor(Math.random() * 10) + 1;
 
 // this starts the game
-greeting()
+greeting();
