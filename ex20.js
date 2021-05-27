@@ -46,10 +46,10 @@ const spider = (hp) => {
 
     if(hp <= 0) {
         die("You died!");
+      }
 
     say("You manage to run away back to that door you found earlier.");
     door(hp);
-  }
 }
 
 const gold = (hp) => {
