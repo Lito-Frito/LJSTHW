@@ -5,10 +5,12 @@ let frank = {
     eyes: "blue"
 }
 
+// Talking function outside Object
 const frank_talk = (who, words) => {
     console.log(`I am ${who.name} and ${words}.`);
 }
 
+// Make Frank talk
 frank_talk(frank, "I am talking here!");
 
 
@@ -26,3 +28,23 @@ let mary = {
 mary.talk(mary, "these are some words");
 // and this works but that's weird
 mary.talk(frank, "I am frank what?");
+
+
+// we need a way to build these automatically
+const Person = (name, age, eyes) => {
+    // this makes an obj for the data
+    let obj = {
+        name: name,
+        age: age,
+        eyes: eyes
+    }
+
+    // then attach our function to it
+    obj.talk = (words) => {
+        // coolest part is obj here will keep a reference
+        console.log(`I am ${obj.name} and ${words}.`);
+    }
+
+    // and return our new person
+    return obj;
+}
