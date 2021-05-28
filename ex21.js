@@ -48,3 +48,8 @@ const Person = (name, age, eyes) => {
     // and return our new person
     return obj;
 }
+
+// let's use that to make someone named alex
+let alex = Person("Alex", 16, "green");
+// and see how they can talk without repetition?
+alex.talk("Hi there!");
