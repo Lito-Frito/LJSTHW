@@ -38,10 +38,10 @@ const fancyPet = (owner_name, owner_age, pet_name, pet_age, cb) => {
 }
 
 // notice how I use a function here as the parameter cb?
-// My notes: since I said in L36 CB is a f(x), before L46, I execute cb(x)
-// This is what prints who owns whom
-// Then I add another line to that (L46)
-// This line does something after cb(x) is executed
+// My notes: I said in L36 CB is a f(x); L45(name, age) says to jump back to L36
+// Then I say, do L46 first as part of CB on L36
+// So before I print L37, I add in L46 as additional commands for cb(x)
+// Then it does what L37 says
 fancyPet('Zed', 44, 'Mr. Scruffles', 10, (name, age) => {
     console.log(`Ooooh fancy ${name} you are ${age} old.`);
 });
