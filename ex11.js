@@ -25,14 +25,20 @@ printPet('Eve', 35, 'Kong The Donkey', 20);
 // this part is tough!  brain melting! give it a try
 //
 console.log('------------------ callback style ----------------');
-// cb is a standin for a f(x) which is then created as a f(x) in line 30
+// cb is a standin for a f(x) which is then created as a f(x) in line 35
+// My notes: Here, create a function by assigning cb to the var fancyPet
+// Each parameter is listed in parenthesis
+// It goes on the stack when the function is called: (name, age).
+// The "fat arrow", or =>, says "this going to be a function."
+// If the code is 1 line, just type it; if it's multiple lines, use curly braces
+// To return a value, then you add 'return value'
 const fancyPet = (owner_name, owner_age, pet_name, pet_age, cb) => {
     cb(owner_name, owner_age);
     console.log(`That person owns ${pet_name} who is ${pet_age} years old.`);
 }
 
 // notice how I use a function here as the parameter cb?
-// Here, the cb is named as 2 vars; you then say what standin CB does on L37
+// is named as 2 vars; you then say what standin CB does on L37
 fancyPet('Zed', 44, 'Mr. Scruffles', 10, (name, age) => {
     console.log(`Ooooh fancy ${name} you are ${age} old.`);
 });
