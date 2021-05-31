@@ -38,7 +38,10 @@ const fancyPet = (owner_name, owner_age, pet_name, pet_age, cb) => {
 }
 
 // notice how I use a function here as the parameter cb?
-// is named as 2 vars; you then say what standin CB does on L37
+// My notes: since I said in L36 CB is a f(x), before L46, I execute cb(x)
+// This is what prints who owns whom
+// Then I add another line to that (L46)
+// This line does something after cb(x) is executed
 fancyPet('Zed', 44, 'Mr. Scruffles', 10, (name, age) => {
     console.log(`Ooooh fancy ${name} you are ${age} old.`);
 });
