@@ -43,7 +43,7 @@ class Room {
   }
 
   enter() {
-    console.log("Implement me!");
+    console.log("implement me!");
   }
 }
 
@@ -63,15 +63,30 @@ class Spider extends Room {
 
 class Gold extends Room {
   enter() {
-    // end of the game they win if they get the gold
+    this.game.say("\nYou found the gold!");
+    this.game.say("Congratulations, you win!");
   }
 }
 
 class Rope extends Room {
   enter() {
-    // they are at the bottom of the well
-    // they can go through the door to the gold
-    // or go take a wrong turn to the spider
+    this.game.say("You are at the bottom of the well now.");
+    this.game.say("You can choose that door which probably leads to gold.");
+    this.game.say("Or you can go choose that tunnel and see a giant spider.");
+
+    let choice = this.game.ask("\nWhat do you want to do?");
+
+    if (choice === "door") {
+      this.game.say("\nYou decide to walk through the door.");
+      this.game.gold.enter();
+    } else if(choice === "spider") {
+        this.game.say("\nYikes! Let's see if you survive!");
+        this.game.hit(10);
+        this.game.rope.enter();
+    } else {
+        this.game.say("\nYou can't do that here.\n");
+        this.game.rope.enter();
+    }
   }
 }
 
@@ -83,14 +98,14 @@ class Well extends Room {
     let next = this.game.ask("What do you do?");
 
     if(next === "climb") {
-        this.game.say("You climb down the rope.");
+        this.game.say("\nYou climb down the rope.");
         this.game.rope.enter();
     } else if(next === "jump") {
-        this.game.say("Yikes! Let's see if you survive!");
+        this.game.say("\nYikes! Let's see if you survive!");
         this.game.hit(5);
         this.game.rope.enter();
     } else {
-        this.game.say("You can't do that here.");
+        this.game.say("\nYou can't do that here.\n");
         this.game.well.enter();
     }
   }
