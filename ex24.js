@@ -34,6 +34,10 @@ class Game {
 
   hit(amount) {
     this.hp -= amount;
+    console.log(`[[You have ${this.hp} hit points.]]`);
+    if(this.hp <= 0) {
+        this.die("You died!");
+    }
   }
 }
 
@@ -49,15 +53,25 @@ class Room {
 
 class Door extends Room {
     enter() {
-      // they have to open the door to get the gold
-      // what kind of puzzle will they solve?
+      this.game.say("\nDo you desire gold?");
+      let gold = this.game.ask("Y or N?");
+      if (gold === "Y" || gold === "y") {
+        this.game.say("\nThe door opens for you and you walk through.");
+        this.game.gold.enter();
+      } else if (gold === "N" || gold === "n"){
+        this.game.say("\nThe door locks and you walk back to where you were.");
+        this.game.rope.enter();
+      }
     }
 }
 
 class Spider extends Room {
   enter() {
-    // they enter here, and the spider takes 10 hit points
-    // if they live then they can run away
+    this.game.say("\nYou found a giant spider!");
+    this.game.say("It attacks you!");
+    this.game.hit(10);
+    this.game.say("\nYou run back to safety.");
+    this.game.rope.enter();
   }
 }
 
@@ -78,11 +92,10 @@ class Rope extends Room {
 
     if (choice === "door") {
       this.game.say("\nYou decide to walk through the door.");
-      this.game.gold.enter();
+      this.game.door.enter();
     } else if(choice === "spider") {
         this.game.say("\nYikes! Let's see if you survive!");
-        this.game.hit(10);
-        this.game.rope.enter();
+        this.game.spider.enter();
     } else {
         this.game.say("\nYou can't do that here.\n");
         this.game.rope.enter();
