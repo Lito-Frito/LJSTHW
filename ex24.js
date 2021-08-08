@@ -61,7 +61,10 @@ class Door extends Room {
       } else if (gold === "N" || gold === "n"){
         this.game.say("\nThe door locks and you walk back to where you were.");
         this.game.rope.enter();
-      }
+      } else {
+          this.game.say("\nYou can't do that here.\n");
+          this.game.door.enter();
+        }
     }
 }
 
