@@ -19,15 +19,19 @@ var_sucks();
 // -----------------------------------------------------------------------------
 // puzzle: how small can you make this?
 
-const build_adder = (left) => {
-  // do I really need this variable?
-  let left_hand = left;
-  return adder = (right) =>  {
-    // do I really need the return?
-    let result = left_hand + right;
-    return result;
-  }
-}
+//  OLD WAY
+// const build_adder = (left) => {
+//   // do I really need this variable?
+//   let left_hand = left;
+//   return adder = (right) =>  {
+//     // do I really need the return?
+//     let result = left_hand + right;
+//     return result;
+//   }
+// }
+
+//  NEW WAY (SHORTENED)
+const build_adder = (a) => (b) => a + b;
 
 let add10 = build_adder(10);
 let add20 = build_adder(20);
