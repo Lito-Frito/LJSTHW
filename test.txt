@@ -1,4 +1,10 @@
-I have a problem.
-It's not a problem with you.
-It's a problem with sleep.
-And you have it too.
+Code fragment downloaded:
+
+///
+  [Function: True]
+     {{Yosa.Buson(print):}}",
+     {{Light of the moon}}",
+     {{Moves west, flowers' shadows}}",
+     {{Creep Eastward}}
+  [Function: True]
+///
