@@ -22,6 +22,7 @@ let pets = [
      return msg;
    }
 
+   // This is later ref on L39
    const tee = (result, data, cb) => {
      var side = (input) => {
        cb(input, result, data);
@@ -32,6 +33,9 @@ let pets = [
    }
 
    let owned_pets = [];
+   // AOT takes in an array, "zed" (which is passed to d), and a f(x).
+   // That partial f(x) takes i (input or 'pet'), r (for result) which is the
+   // arr, and d for data input (which takes the place of "zed").
    const add_owner_tee = tee(owned_pets, 'Zed', (i, r, d) => {
      r.push({pet: i, owner: d});
    });
