@@ -2,7 +2,7 @@ Code fragment downloaded:
 
 ///
   [Function: True]
-     {{Yosa.Buson(print):}}",
+     {{Yosa.Buson:}}",
      {{Light of the moon}}",
      {{Moves west, flowers' shadows}}",
      {{Creep Eastward}}
